@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+  <meta name="generator" content="Hugo 0.84.0" />
+  <title>Desa Wisata</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/bootstrap/js/bootstrap.bundle.min.js" />
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbars/" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    .checked {
+      color: orange;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
+  </script>
+
+</head>
+
+<body>
+  <main>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="active"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <img src="gambar/gambar_Jatiluwih.jpeg" class="d-block w-100" alt="..." style="height: 500px" />
+        </div>
+        <div class="carousel-item active">
+          <img src="gambar/desa_penglipuran.jpeg" class="d-block w-100" alt="..." style="height: 500px" />
+        </div>
+        <div class="carousel-item">
+          <img src="gambar/Gambar_tenganan.webp" class="d-block w-100" alt="..." style="height: 500px" />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <nav class="navbar navbar-expand-lg" style="background-color: #dcdcbc">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Desa Wisata</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="akomodasi.html">Akomodasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="wawasan.html">Wawasan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="berita.html">Berita</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <div class="shadow p-3 mb-5 bg-body rounded">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <label for="exampleFormControlInput1" class="form-label">Kategori</label>
+            <select id="jenis" class="form-select" aria-label="Default select example">
+              <option selected>-Pilih Kategori-</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Transportasi">Transportasi</option>
+              <option value="Lain-lainnya">Lain-lainnya</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="checkin" class="form-label">Checkin</label>
+            <input type="text" class="form-control" id="checkin" placeholder="name@example.com" />
+          </div>
+          <div class="col">
+            <label for="checkout" class="form-label">Check out</label>
+            <input type="text" class="form-control" id="checkout" placeholder="name@example.com" />
+          </div>
+          <div class="col" style="margin-top: 32px">
+            <a id="cari" type="button" class="btn btn-outline-primary">Cari</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="row mt-2" id="divHotel" style="display: none">
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="gambar/gk_bali.jpg" class="card-img-top" alt="..." style="width: 316px" />
+            <div class="card-body">
+              <h5 class="card-title">GK Bali Resort</h5>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <p class="card-text">GK Bali Resort menyediakan parkir pribadi gratis, wifi geratis, kolam renang luar
+                ruangan, dan taman di Tegallalang.</p>
+              <a href="#" class="btn btn-primary" onclick="cekharga('GK Bali Resort','2.750.000')">Lihat Penawaran </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="gambar/padma_resort_ubud.jpg" class="card-img-top" alt="..." style="width: 316px" />
+            <div class="card-body">
+              <h5 class="card-title">Padma Resort Ubud</h5>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <p class="card-text">Padma Ubud menyediakan Wifi gratis di semua kamar, kamar uap, shuttle bandara, Taman,
+                dan parkir gratis</p>
+              <a href="#" class="btn btn-primary" onclick="cekharga('Padma Resort Ubud','3.600.000')">Lihat Penawaran
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="gambar/samsara_ubud.jpg" class="card-img-top" alt="..." style="width: 316px" />
+            <div class="card-body">
+              <h5 class="card-title">Samsara Ubud</h5>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <p class="card-text">Samsara menyediakan kolam renang luar ruangan, pijat dan pusat kebugaran, parkir dan
+                wifi gratis.</p>
+              <a href="#" class="btn btn-primary" onclick="cekharga('Samsara Ubud','3.960.000')">Lihat Penawaran </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="gambar/akasari_resort.jpg" class="card-img-top" alt="..." style="width: 316px" />
+            <div class="card-body">
+              <h5 class="card-title">Akasari Resort</h5>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <p class="card-text">Akasari menyediakan kolam renang luar ruangan, wifi dan parkir gratis, restoran dan
+                layanan kamar</p>
+              <a href="#" class="btn btn-primary" onclick="cekharga('Akasari Resort','1.500.000')">Lihat Penawaran </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2" id="divTransportasi" style="display: none">
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="gambar/scoopy.jpeg" class="card-img-top" alt="..." style="width: 320px" />
+            <div class="card-body">
+              <h5 class="card-title">Scoopy</h5>
+              <p class="card-text"></p>
+              <a href="#" type="button" class="btn btn-success" onclick="booking('Scoopy' ,'300.000')">Sewa Motor</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="gambar/nmax1.webp" class="card-img-top" alt="..." style="width: 300px" />
+            <div class="card-body">
+              <h5 class="card-title">Nmax</h5>
+              <p class="card-text"></p>
+              <a href="#" type="button" class="btn btn-success" onclick="booking('Nmax' ,'400.000')">Sewa Motor</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="gambar/vespa.jpeg" class="card-img-top" alt="..." style="width: 300px" />
+            <div class="card-body">
+              <h5 class="card-title">Vespa Sprint</h5>
+              <p class="card-text"></p>
+              <a href="#" type="button" class="btn btn-success" onclick="booking('Vespa sprint' ,'500.000')">Sewa
+                Motor</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="gambar/cbr.jpeg" class="card-img-top" alt="..." style="width: 300px" />
+            <div class="card-body">
+              <h5 class="card-title">CBR 150</h5>
+              <p class="card-text"></p>
+              <a href="#" type="button" class="btn btn-success" onclick="booking('CBR 150' ,'600.000')">Sewa Motor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="judulModal">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="harga" class="form-label">Harga</label>
+            <input type="text" id="harga" readonly="readonly" class="form-control" placeholder="Disabled input" />
+
+            <label for="qty" class="form-label">Jumlah</label>
+            <input type="number" id="qty" class="form-control" placeholder="Disabled input" />
+
+            <label for="total" class="form-label">Total</label>
+            <input type="text" id="total" readonly="readonly" class="form-control" placeholder="Disabled input" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="popup">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/bootstrap/jquery-3.6.1.min.js"></script>
+
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="sweetalert2.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $(function () {
+      $("#checkout").datepicker();
+      $("#checkin").datepicker();
+    });
+  </script>
+  <script>
+    $("#popup").click(function () {
+      swal("terimakasih sudah Booking", "Here's some text", "success", {
+        button: "Simpan",
+
+      });
+    })
+
+  </script>
+  <script>
+    $("#cari").click(function () {
+      var jenis = $("#jenis").val();
+      if (jenis == "Hotel") {
+        $("#divHotel").fadeIn("10000");
+        $("#divTransportasi").fadeOut();
+        $("#divlainnya").fadeOut();
+      } else if (jenis == "Transportasi") {
+        $("#divHotel").fadeOut();
+        $("#divTransportasi").fadeIn("10000");
+        $("#divlainnya").fadeOut();
+      } else if (jenis == "Lain-lainnya") {
+        $("#divTransportasi").fadeIn("10000");
+        $("#divHotel").fadeIn("10000");
+      } else {
+        alert("layanan belum tersedia");
+      }
+    });
+
+    function cekharga(namaObjek, harga) {
+      $("#ModalForm").modal("show");
+      $("#judulModal").text(namaObjek);
+      $("#harga").val(harga);
+    }
+
+    function booking(namaObjek, harga) {
+      $("#ModalForm").modal("show");
+      $("#judulModal").text(namaObjek);
+      $("#harga").val(harga);
+    }
+
+    $("#qty").on("input", function (e) {
+      var qty = $("#qty").val();
+      var harga = $("#harga").val().replace(/\./g, "");
+      var total = parseInt(harga) * parseInt(qty);
+      $("#total").val(total.toLocaleString());
+      // alert(harga);
+    });
+  </script>
+</body>
+
+</html>
